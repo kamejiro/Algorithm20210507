@@ -12,116 +12,116 @@ using namespace std;
 int sortdefault[10];
 size_t sortSize = SIZE_OF_ARRAY(sortdefault);
 
-void initSort(int _array[]);//”z—ñ‰Šú‰»
-void printSort(int _array[], int _arraySize);//”z—ñ‚Ìo—Í
-void sentakuSort(int _array[]);//‘I‘ğƒ\[ƒg
-void bubbleSort(int _array[]);//ƒoƒuƒ‹ƒ\[ƒg
-void insertSort(int _array[]);//‘}“üƒ\[ƒg
+void initSort(int _array[]);//é…åˆ—åˆæœŸåŒ–
+void printSort(int _array[], int _arraySize);//é…åˆ—ã®å‡ºåŠ›
+void sentakuSort(int _array[]);//é¸æŠã‚½ãƒ¼ãƒˆ
+void bubbleSort(int _array[]);//ãƒãƒ–ãƒ«ã‚½ãƒ¼ãƒˆ
+void insertSort(int _array[]);//æŒ¿å…¥ã‚½ãƒ¼ãƒˆ
 void searchResult(int _target, int _result);
 void hashArray(int _array[], int _hash[], int _arraySize);
 int hashSearch(int _array[], int _hash[], int _arraySize, int _serchData);
 void hashArray2(int _array[], int _hash[], int _pointa[], int _arraySize);
 int hashSearch2(int _hash[], int _pointa[], int _serchData);
-int linearSearch(int _array[], int _arraySize, int _serchData);//üŒ`’Tõ
-int linearSearch2(int _array[], int _arraySize, int _serchData);//üŒ`’Tõi”Ô•º‚ ‚èj
-void printImage(int _array[][xsize]);//‰æ‘œ‚Ìo—Í
+int linearSearch(int _array[], int _arraySize, int _serchData);//ç·šå½¢æ¢ç´¢
+int linearSearch2(int _array[], int _arraySize, int _serchData);//ç·šå½¢æ¢ç´¢ï¼ˆç•ªå…µã‚ã‚Šï¼‰
+void printImage(int _array[][xsize]);//ç”»åƒã®å‡ºåŠ›
 int kaijo(int n);
-int binarySearch(int _array[], int _ans, int _low, int _high);//“ñ•ª’Tõ
-void shellSort(int _array[], size_t _size);//ƒVƒFƒ‹ƒ\[ƒg
-void quickSort(int _array[], int left, int right);//ƒNƒCƒbƒNƒ\[ƒg
-int findPivot(int x, int y, int z);//ƒNƒCƒbƒNƒ\[ƒg‚Ìƒsƒ{ƒbƒgŒˆ’è
-void heapSort(int _array[], int _arraySize);//ƒq[ƒvƒ\[ƒg
-void makeHeap(int _array[], int _arraySize);//ƒq[ƒv–Øì¬@
-void heapSwap(int _array[], int _a, int _b);//ŒğŠ·
-void merge(int _array[], int _temp[], int _left, int _right);//“‡
-void mergeSort(int _array[], int _temp[], int _left, int _right);//•ªŠ„‚Æƒ\[ƒg
+int binarySearch(int _array[], int _ans, int _low, int _high);//äºŒåˆ†æ¢ç´¢
+void shellSort(int _array[], size_t _size);//ã‚·ã‚§ãƒ«ã‚½ãƒ¼ãƒˆ
+void quickSort(int _array[], int left, int right);//ã‚¯ã‚¤ãƒƒã‚¯ã‚½ãƒ¼ãƒˆ
+int findPivot(int x, int y, int z);//ã‚¯ã‚¤ãƒƒã‚¯ã‚½ãƒ¼ãƒˆã®ãƒ”ãƒœãƒƒãƒˆæ±ºå®š
+void heapSort(int _array[], int _arraySize);//ãƒ’ãƒ¼ãƒ—ã‚½ãƒ¼ãƒˆ
+void makeHeap(int _array[], int _arraySize);//ãƒ’ãƒ¼ãƒ—æœ¨ä½œæˆã€€
+void heapSwap(int _array[], int _a, int _b);//äº¤æ›
+void merge(int _array[], int _temp[], int _left, int _right);//çµ±åˆ
+void mergeSort(int _array[], int _temp[], int _left, int _right);//åˆ†å‰²ã¨ã‚½ãƒ¼ãƒˆ
 
 int main() {
 	initSort(sortdefault);
 	printSort(sortdefault, sortSize);
 
 
-	//1@‘I‘ğƒ\[ƒg
+	//1ã€€é¸æŠã‚½ãƒ¼ãƒˆ edittest
 	/*sentakuSort(sortdefault);
-	cout << "‘I‘ğƒ\[ƒg" << endl;
+	cout << "é¸æŠã‚½ãƒ¼ãƒˆ" << endl;
 	printSort(sortdefault, sortSize);*/
 
 
-	//2@ƒoƒuƒ‹ƒ\[ƒg
+	//2ã€€ãƒãƒ–ãƒ«ã‚½ãƒ¼ãƒˆ
 	/*bubbleSort(sortdefault);
-	cout << "ƒoƒuƒ‹ƒ\[ƒg" << endl;
+	cout << "ãƒãƒ–ãƒ«ã‚½ãƒ¼ãƒˆ" << endl;
 	printSort(sortdefault, sortSize);*/
 
 
-	//3@‘}“üƒ\[ƒg
+	//3ã€€æŒ¿å…¥ã‚½ãƒ¼ãƒˆ
 	/*insertSort(sortdefault);
-	cout << "‘}“üƒ\[ƒg" << endl;
+	cout << "æŒ¿å…¥ã‚½ãƒ¼ãƒˆ" << endl;
 	printSort(sortdefault, sortSize);*/
 
 
-	//4-1@üŒ`’Tõ–@1
+	//4-1ã€€ç·šå½¢æ¢ç´¢æ³•1
 	/*int ans = linearSearch(sortdefault, sortSize, 5);
-	cout << "üŒ`’Tõ–@1" << endl;
+	cout << "ç·šå½¢æ¢ç´¢æ³•1" << endl;
 	
 	searchResult(5, ans);*/
 	
 	
-	//4-2@üŒ`’Tõ–@2”Ô•º‚ ‚è
+	//4-2ã€€ç·šå½¢æ¢ç´¢æ³•2ç•ªå…µã‚ã‚Š
 	/*int ans = linearSearch2(sortdefault, sortSize, 5);
-	cout << "üŒ`’Tõ–@(”Ô•º‚ ‚è)" << endl;
-	cout << "’Tõƒf[ƒ^F5" << endl;
+	cout << "ç·šå½¢æ¢ç´¢æ³•(ç•ªå…µã‚ã‚Š)" << endl;
+	cout << "æ¢ç´¢ãƒ‡ãƒ¼ã‚¿ï¼š5" << endl;
 	searchResult(5, ans);*/
 
 
-	//5@“ñ•ª’Tõ–@
-	/*cout << "‚Ü‚¸ƒ\[ƒg" << endl;
+	//5ã€€äºŒåˆ†æ¢ç´¢æ³•
+	/*cout << "ã¾ãšã‚½ãƒ¼ãƒˆ" << endl;
 	sentakuSort(sortdefault);
 	printSort(sortdefault, sortSize);
 
-	cout << "“ñ•ª’Tõ–@" << endl;
-	cout << "’Tõƒf[ƒ^F5" << endl;
+	cout << "äºŒåˆ†æ¢ç´¢æ³•" << endl;
+	cout << "æ¢ç´¢ãƒ‡ãƒ¼ã‚¿ï¼š5" << endl;
 	int ans = binarySearch(sortdefault, 5, 0, 9);
 	searchResult(5, ans);*/
 
 
 
-	//6@ƒnƒbƒVƒ…•\’Tõ(ƒI[ƒvƒ“ƒAƒhƒŒƒX–@)
-	//Ši”[ƒtƒF[ƒY
+	//6ã€€ãƒãƒƒã‚·ãƒ¥è¡¨æ¢ç´¢(ã‚ªãƒ¼ãƒ—ãƒ³ã‚¢ãƒ‰ãƒ¬ã‚¹æ³•)
+	//æ ¼ç´ãƒ•ã‚§ãƒ¼ã‚º
 	//int hash[10];
 	//hashArray(sortdefault, hash, sortSize);
 	//printSort(hash, sortSize);
 
-	////’TõƒtƒF[ƒY
+	////æ¢ç´¢ãƒ•ã‚§ãƒ¼ã‚º
 	//int searchData;
-	//cout << "’Tõƒf[ƒ^‚ğ“ü—Í:";
+	//cout << "æ¢ç´¢ãƒ‡ãƒ¼ã‚¿ã‚’å…¥åŠ›:";
 	//cin >> searchData;
 	//int ans = hashSearch(sortdefault, hash, sortSize, searchData);
-	//cout << "ƒI[ƒvƒ“ƒAƒhƒŒƒX–@" << endl;
+	//cout << "ã‚ªãƒ¼ãƒ—ãƒ³ã‚¢ãƒ‰ãƒ¬ã‚¹æ³•" << endl;
 	//searchResult(searchData, ans);
 
 
 
-	//7@ƒnƒbƒVƒ…•\’Tõ(ƒ`ƒFƒCƒ“–@)
-	//Ši”[ƒtƒF[ƒY
-	int hash[10 * 2];//Œã‚ë10‚ÍƒnƒbƒVƒ…—Ìˆæ
+	//7ã€€ãƒãƒƒã‚·ãƒ¥è¡¨æ¢ç´¢(ãƒã‚§ã‚¤ãƒ³æ³•)
+	//æ ¼ç´ãƒ•ã‚§ãƒ¼ã‚º
+	int hash[10 * 2];//å¾Œã‚10ã¯ãƒãƒƒã‚·ãƒ¥é ˜åŸŸ
 	int pointa[10 * 2];
 	hashArray2(sortdefault, hash, pointa, sortSize);
 	printSort(hash, sortSize*2);
 	printSort(pointa, sortSize*2);
 
-	//’TõƒtƒF[ƒY
+	//æ¢ç´¢ãƒ•ã‚§ãƒ¼ã‚º
 	int searchData;
-	cout << "’Tõƒf[ƒ^‚ğ“ü—Í:";
+	cout << "æ¢ç´¢ãƒ‡ãƒ¼ã‚¿ã‚’å…¥åŠ›:";
 	cin >> searchData;
 	int result = hashSearch2(hash, pointa, searchData);
-	cout << "ƒ`ƒFƒCƒ“–@" << endl;
+	cout << "ãƒã‚§ã‚¤ãƒ³æ³•" << endl;
 	searchResult(searchData, result);
 	
 
 
-	//8@•¶š—ñ‘€ì
-	/*string mondai = "‚ä‚è‚±‚ä‚è‚ ‚ä‚ß‚æ";
-	string search = "‚ä‚è‚ ";
+	//8ã€€æ–‡å­—åˆ—æ“ä½œ
+	/*string mondai = "ã‚†ã‚Šã“ã‚†ã‚Šã‚ã‚†ã‚ã‚ˆ";
+	string search = "ã‚†ã‚Šã‚";
 	cout << mondai << endl;
 
 	int mondaiLength = mondai.length();
@@ -148,13 +148,13 @@ int main() {
 			break;
 		}
 	}
-	if (flag == 0) 	cout << search << "‚Í‚È‚¢" << endl;
-	else cout << search << "‚Í" << (flag - 6) / 2 + 1 << "•¶š–Ú‚É‚ ‚è" << endl;*/
+	if (flag == 0) 	cout << search << "ã¯ãªã„" << endl;
+	else cout << search << "ã¯" << (flag - 6) / 2 + 1 << "æ–‡å­—ç›®ã«ã‚ã‚Š" << endl;*/
 	
 
 
 
-	//9@‰æ‘œ‘€ì
+	//9ã€€ç”»åƒæ“ä½œ
 	int data[] = {
 		0,0,0,0,0,0,0,0,
 		0,0,0,0,0,0,0,0,
@@ -171,63 +171,63 @@ int main() {
 			field[i][j] = data[i * ysize + j];
 		}
 	}
-	cout << "‰Šúó‘Ô" << endl;
+	cout << "åˆæœŸçŠ¶æ…‹" << endl;
 	printImage(field);
 
 
-	//¶‰ñ“]----------------------------------------
+	//å·¦å›è»¢----------------------------------------
 	int rotate90left[ysize][xsize];
-	//‰ñ“]ˆ—
+	//å›è»¢å‡¦ç†
 	for (int i = 0; i < ysize; i++) {
 		for (int j = 0; j < xsize; j++) {
 			rotate90left[i][j] = field[j][ysize-i-1];
 		}
 	}
-	//o—Í
-	cout << "¶90“x‰ñ“]" << endl;
+	//å‡ºåŠ›
+	cout << "å·¦90åº¦å›è»¢" << endl;
 	printImage(rotate90left);
 
 
-	//‰E‰ñ“]----------------------------------------
+	//å³å›è»¢----------------------------------------
 	int rotate90right[ysize][xsize];
-	//‰ñ“]ˆ—
+	//å›è»¢å‡¦ç†
 	for (int i = 0; i < ysize; i++) {
 		for (int j = 0; j < xsize; j++) {
 			rotate90right[i][j] = field[xsize-(j+1)][i];
 		}
 	}
-	//o—Í
-	cout << "‰E90“x‰ñ“]" << endl;
+	//å‡ºåŠ›
+	cout << "å³90åº¦å›è»¢" << endl;
 	printImage(rotate90right);
 
 
-	//ã‰º”½“]----------------------------------------
-	//‰ñ“]ˆ—
+	//ä¸Šä¸‹åè»¢----------------------------------------
+	//å›è»¢å‡¦ç†
 	int flipUpsideDown[ysize][xsize];
 	for (int i = 0; i < ysize; i++) {
 		for (int j = 0; j < xsize; j++) {
 			flipUpsideDown[i][j] = field[ysize-(i+1)][j];
 		}
 	}
-	//o—Í
-	cout << "ã‰º”½“]" << endl;
+	//å‡ºåŠ›
+	cout << "ä¸Šä¸‹åè»¢" << endl;
 	printImage(flipUpsideDown);
 
 
-	//¶‰E”½“]----------------------------------------
-	//‰ñ“]ˆ—
+	//å·¦å³åè»¢----------------------------------------
+	//å›è»¢å‡¦ç†
 	int flipHorizontal[ysize][xsize];
 	for (int i = 0; i < ysize; i++) {
 		for (int j = 0; j < xsize; j++) {
 			flipHorizontal[i][j] = field[i][xsize - (j + 1)];
 		}
 	}
-	//o—Í
-	cout << "¶‰E”½“]" << endl;
+	//å‡ºåŠ›
+	cout << "å·¦å³åè»¢" << endl;
 	printImage(flipHorizontal);
 
 
-	//ˆÚ“®----------------------------------------
+	//ç§»å‹•----------------------------------------
 	int moveImage[ysize][xsize];
 	for (int i = 0; i < ysize; i++) {
 		for (int j = 0; j < xsize; j++) {
@@ -235,10 +235,10 @@ int main() {
 			else moveImage[i][j] = field[i + 1][j + 1];
 		}
 	}
-	cout << "ˆÚ“®" << endl;
+	cout << "ç§»å‹•" << endl;
 	printImage(moveImage);
 
-	//Šg‘å----------------------------------------
+	//æ‹¡å¤§----------------------------------------
 	const int  zoomInSize = 2;
 	int zoomIn[ysize* zoomInSize][xsize* zoomInSize];
 	for (int i = 0; i < ysize; i++) {
@@ -250,16 +250,16 @@ int main() {
 			}
 		}
 	}
-	cout << "Šg‘å" << endl;
+	cout << "æ‹¡å¤§" << endl;
 	for (int i = 0; i < ysize*zoomInSize; i++) {
 		for (int j = 0; j < xsize*zoomInSize; j++) {
-			if (zoomIn[i][j] == 1)cout << "¡";
-			else cout << " ";
+			if (zoomIn[i][j] == 1)cout << "â– ";
+			else cout << "â–¡";
 		}
 		cout << endl;
 	}
 
-	//k¬----------------------------------------
+	//ç¸®å°----------------------------------------
 	
 	int zoomOut[ysize/zoomInSize][xsize/zoomInSize];
 	for (int i = 0; i < ysize; i+=2) {
@@ -267,16 +267,16 @@ int main() {
 			zoomOut[i/zoomInSize][j/zoomInSize] = field[i][j];
 		}
 	}
-	cout << "k¬" << endl;
+	cout << "ç¸®å°" << endl;
 	for (int i = 0; i < ysize / zoomInSize; i++) {
 		for (int j = 0; j < xsize / zoomInSize; j++) {
-			if (zoomOut[i][j] == 1)cout << "¡";
-			else cout << " ";
+			if (zoomOut[i][j] == 1)cout << "â– ";
+			else cout << "â–¡";
 		}
 		cout << endl;
 	}
 	
-	//•¡Ê----------------------------------------
+	//è¤‡å†™----------------------------------------
 	const int copySize = 2;
 	int copyImage[ysize* copySize][xsize* copySize];
 	for (int i = 0; i < ysize; i ++) {
@@ -288,62 +288,62 @@ int main() {
 			}
 		}
 	}
-	cout << "•¡Ê" << endl;
+	cout << "è¤‡å†™" << endl;
 	for (int i = 0; i < ysize * copySize; i++) {
 		for (int j = 0; j < xsize * copySize; j++) {
-			if (copyImage[i][j] == 1)cout << "¡";
-			else cout << " ";
+			if (copyImage[i][j] == 1)cout << "â– ";
+			else cout << "â–¡";
 		}
 		cout << endl;
 	}
 
-	//10@Ä‹Aˆ—
-	////ŠKæ
+	//10ã€€å†å¸°å‡¦ç†
+	////éšä¹—
 	//int num = 5;
-	//cout << num << "‚ÌŠKæ‚Í" << kaijo(num) << endl;
+	//cout << num << "ã®éšä¹—ã¯" << kaijo(num) << endl;
 
-	////“ñ•ª’Tõ
+	////äºŒåˆ†æ¢ç´¢
 	//sentakuSort(sortdefault);
 	//printSort(sortdefault);
 	//int low = 0;
 	//int high = 9;
 	//int ans=binarySearch(sortdefault, 5, low, high);
-	//if (ans == -1)cout << "5‚Í–³‚¢" << endl;
-	//else cout << "5‚Í" << ans+1 << "”Ô–Ú‚É‚ ‚è" << endl;
+	//if (ans == -1)cout << "5ã¯ç„¡ã„" << endl;
+	//else cout << "5ã¯" << ans+1 << "ç•ªç›®ã«ã‚ã‚Š" << endl;
 
 
-	//11@ƒVƒFƒ‹ƒ\[ƒg nŒÂ‚²‚Æ‚ÌŠÔŠu‚Å”äŠr‚µAŠÔŠu‚ğ¬‚³‚­‚µ‚Ä‚¢‚­
+	//11ã€€ã‚·ã‚§ãƒ«ã‚½ãƒ¼ãƒˆ nå€‹ã”ã¨ã®é–“éš”ã§æ¯”è¼ƒã—ã€é–“éš”ã‚’å°ã•ãã—ã¦ã„ã
 	/*shellSort(sortdefault,sortSize);
-	cout << "‘I‘ğƒ\[ƒg" << endl;
+	cout << "é¸æŠã‚½ãƒ¼ãƒˆ" << endl;
 	printSort(sortdefault);*/
 
 
-	//12@ƒNƒCƒbƒNƒ\[ƒg
+	//12ã€€ã‚¯ã‚¤ãƒƒã‚¯ã‚½ãƒ¼ãƒˆ
 	/*int sortLow = 0;
 	int sortHigh = 9;
 	quickSort(sortdefault, sortLow, sortHigh);
-	cout << "ƒNƒCƒbƒNƒ\[ƒg" << endl;
+	cout << "ã‚¯ã‚¤ãƒƒã‚¯ã‚½ãƒ¼ãƒˆ" << endl;
 	printSort(sortdefault);*/
 
 
-	//13@ƒq[ƒvƒ\[ƒg
-	//“ü‚ê‘Ö‚íè“à
+	//13ã€€ãƒ’ãƒ¼ãƒ—ã‚½ãƒ¼ãƒˆ
+	//å…¥ã‚Œæ›¿ã‚æ‰‹å†…
 	/*heapSort(sortdefault, 10);
-	cout << "ƒq[ƒvƒ\[ƒg" << endl;
+	cout << "ãƒ’ãƒ¼ãƒ—ã‚½ãƒ¼ãƒˆ" << endl;
 	printSort(sortdefault);*/
 
-	//14@ƒ}[ƒWƒ\[ƒg
+	//14ã€€ãƒãƒ¼ã‚¸ã‚½ãƒ¼ãƒˆ
 	/*int temp[10];
 	mergeSort(sortdefault, temp, 0, 9);
-	cout << "ƒ}[ƒWƒ\[ƒg" << endl;
+	cout << "ãƒãƒ¼ã‚¸ã‚½ãƒ¼ãƒˆ" << endl;
 	printSort(sortdefault);*/
 
 
-	//btap–@
-	//ƒnƒtƒ}ƒ“•„†
-	//Å’ZŒo˜H
-	//ƒŠƒtƒ@ƒNƒ^ƒŠƒ“ƒO@ŠÖ”‰»‚âsort()‚ğg‚¤‚È‚Ç.ƒJƒEƒ“ƒgƒI[ƒ_[‚à’Ç‰Á,“r’†Œo‰ß‚ào—Í
-	//ƒ‰ƒCƒuƒ‰ƒŠg‚Á‚Ä‘‚­
+	//btapæ³•
+	//ãƒãƒ•ãƒãƒ³ç¬¦å·
+	//æœ€çŸ­çµŒè·¯
+	//ãƒªãƒ•ã‚¡ã‚¯ã‚¿ãƒªãƒ³ã‚°ã€€é–¢æ•°åŒ–ã‚„sort()ã‚’ä½¿ã†ãªã©.ã‚«ã‚¦ãƒ³ãƒˆã‚ªãƒ¼ãƒ€ãƒ¼ã‚‚è¿½åŠ ,é€”ä¸­çµŒéã‚‚å‡ºåŠ›
+	//ãƒ©ã‚¤ãƒ–ãƒ©ãƒªä½¿ã£ã¦æ›¸ã
 }
 
 void initSort(int _array[]) {
@@ -353,7 +353,7 @@ void initSort(int _array[]) {
 	}
 }
 
-//~‡‚Ì‘I‘ğƒ\[ƒg
+//é™é †ã®é¸æŠã‚½ãƒ¼ãƒˆ
 void sentakuSort(int _array[]) {
 	int temp;
 	for (int i = 0; i < sortSize - 1; i++) {
@@ -367,7 +367,7 @@ void sentakuSort(int _array[]) {
 	}
 }
 
-//ƒoƒuƒ‹ƒ\[ƒg
+//ãƒãƒ–ãƒ«ã‚½ãƒ¼ãƒˆ
 void bubbleSort(int _array[]) {
 	int temp;
 	for (int i = 1; i < sortSize - 1; i++) {
@@ -381,7 +381,7 @@ void bubbleSort(int _array[]) {
 	}
 }
 
-//‘}“üƒ\[ƒg
+//æŒ¿å…¥ã‚½ãƒ¼ãƒˆ
 void insertSort(int _array[]) {
 	int temp;
 	for (int i = 1; i < sortSize; i++) {
@@ -395,7 +395,7 @@ void insertSort(int _array[]) {
 	}
 }
 
-//”z—ñ‚ğo—Í
+//é…åˆ—ã‚’å‡ºåŠ›
 void printSort(int _array[], int _arraySize) {
 	for (int i = 0; i < _arraySize; i++) {
 		cout << _array[i] << " ";
@@ -403,14 +403,14 @@ void printSort(int _array[], int _arraySize) {
 	cout << endl;
 }
 
-//’TõŒ‹‰Ê‚ğo—Í
+//æ¢ç´¢çµæœã‚’å‡ºåŠ›
 void searchResult(int _target, int _result) {
-	cout << "’Tõƒf[ƒ^F" << _target << endl;
-	if (_result == -1)cout << "’Tõƒf[ƒ^–³‚µ" << endl;
-	else cout << "’Tõƒf[ƒ^‚Í" << _result + 1 << "”Ô–Ú‚É‚ ‚è" << endl;
+	cout << "æ¢ç´¢ãƒ‡ãƒ¼ã‚¿ï¼š" << _target << endl;
+	if (_result == -1)cout << "æ¢ç´¢ãƒ‡ãƒ¼ã‚¿ç„¡ã—" << endl;
+	else cout << "æ¢ç´¢ãƒ‡ãƒ¼ã‚¿ã¯" << _result + 1 << "ç•ªç›®ã«ã‚ã‚Š" << endl;
 }
 
-//üŒ`’Tõ
+//ç·šå½¢æ¢ç´¢
 int linearSearch(int _array[], int _arraySize, int _serchData) {
 	int i = 0;
 	while (i < _arraySize) {
@@ -425,7 +425,7 @@ int linearSearch(int _array[], int _arraySize, int _serchData) {
 	return -1;
 }
 
-//üŒ`’Tõi”Ô•º‚ ‚èj
+//ç·šå½¢æ¢ç´¢ï¼ˆç•ªå…µã‚ã‚Šï¼‰
 int linearSearch2(int _array[], int _arraySize, int _serchData) {
 	int i = 0;
 	int *newArray=new int[_arraySize+1];
@@ -441,16 +441,16 @@ int linearSearch2(int _array[], int _arraySize, int _serchData) {
 	else return i;
 }
 
-//ƒI[ƒvƒ“ƒAƒhƒŒƒX–@‚ÌƒnƒbƒVƒ…‰»
+//ã‚ªãƒ¼ãƒ—ãƒ³ã‚¢ãƒ‰ãƒ¬ã‚¹æ³•ã®ãƒãƒƒã‚·ãƒ¥åŒ–
 void hashArray(int _array[], int _hash[], int _arraySize) {
-	//ƒnƒbƒVƒ…”z—ñ‚ğ‰Šú‰»
+	//ãƒãƒƒã‚·ãƒ¥é…åˆ—ã‚’åˆæœŸåŒ–
 	int temp;
 	int i = 0;
 	for (i = 0; i < _arraySize; i++) {
 		_hash[i] = -1;
 	}
 
-	//”z—ñ‚ğƒnƒbƒVƒ…‰»
+	//é…åˆ—ã‚’ãƒãƒƒã‚·ãƒ¥åŒ–
 	for (i = 0; i < _arraySize; i++) {
 		temp = _array[i] % _arraySize;
 		while (1) {
@@ -463,7 +463,7 @@ void hashArray(int _array[], int _hash[], int _arraySize) {
 		}
 	}
 }
-//ƒI[ƒvƒ“ƒAƒhƒŒƒX–@‚Ì’Tõ
+//ã‚ªãƒ¼ãƒ—ãƒ³ã‚¢ãƒ‰ãƒ¬ã‚¹æ³•ã®æ¢ç´¢
 int hashSearch(int _array[], int _hash[], int _arraySize, int _serchData) {
 	int temp;
 	temp = _serchData % _arraySize;
@@ -484,27 +484,27 @@ int hashSearch(int _array[], int _hash[], int _arraySize, int _serchData) {
 }
 
 
-//ƒ`ƒFƒCƒ“–@‚ÌƒnƒbƒVƒ…‰»
+//ãƒã‚§ã‚¤ãƒ³æ³•ã®ãƒãƒƒã‚·ãƒ¥åŒ–
 void hashArray2(int _array[], int _hash[], int _pointa[], int _arraySize) {
 	int temp;
-	//‰Šú‰»
+	//åˆæœŸåŒ–
 	for (int i = 0; i < _arraySize * 2; i++) {
 		_hash[i] = -1;
 		_pointa[i] = -1;
 	}
-	//ƒnƒbƒVƒ…‰»
+	//ãƒãƒƒã‚·ãƒ¥åŒ–
 	int j = 0;
 	for (int i = 0; i < _arraySize; i++) {
-		//‡”Ô‚ÉƒnƒbƒVƒ…‰»
+		//é †ç•ªã«ãƒãƒƒã‚·ãƒ¥åŒ–
 		temp = _array[i] % _arraySize;
 		while (1) {
-			//‚Ü‚¾hash[temp]‚É’l‚ª“ü‚Á‚Ä‚È‚©‚Á‚½‚çŠi”[
+			//ã¾ã hash[temp]ã«å€¤ãŒå…¥ã£ã¦ãªã‹ã£ãŸã‚‰æ ¼ç´
 			if (_hash[temp] == -1) {
 				_hash[temp] = _array[i];
 				break;
 			}
-			//Šù‚Éhash[temp]‚É’l‚ª“ü‚Á‚Ä‚½‚çpointa[temp]‚Éhash[]‚ÌƒnƒbƒVƒ…—Ìˆæ‚Ö‚ÌƒAƒhƒŒƒX‚ğ‹L‰¯
-			//pointa[temp]‚É‚à’l‚ª“ü‚Á‚Ä‚½‚çhash[]‚ÌƒnƒbƒVƒ…—Ìˆæ‚Ìpointa[]‚ÉƒAƒhƒŒƒX‚ğŠi”[
+			//æ—¢ã«hash[temp]ã«å€¤ãŒå…¥ã£ã¦ãŸã‚‰pointa[temp]ã«hash[]ã®ãƒãƒƒã‚·ãƒ¥é ˜åŸŸã¸ã®ã‚¢ãƒ‰ãƒ¬ã‚¹ã‚’è¨˜æ†¶
+			//pointa[temp]ã«ã‚‚å€¤ãŒå…¥ã£ã¦ãŸã‚‰hash[]ã®ãƒãƒƒã‚·ãƒ¥é ˜åŸŸã®pointa[]ã«ã‚¢ãƒ‰ãƒ¬ã‚¹ã‚’æ ¼ç´
 			else {
 				while (_pointa[temp] != -1) temp = _pointa[temp];
 				_pointa[temp] = _arraySize + j;
@@ -515,9 +515,9 @@ void hashArray2(int _array[], int _hash[], int _pointa[], int _arraySize) {
 		}
 	}
 }
-//ƒ`ƒFƒCƒ“–@‚Ì’Tõ
+//ãƒã‚§ã‚¤ãƒ³æ³•ã®æ¢ç´¢
 int hashSearch2(int _hash[], int _pointa[], int _serchData) {
-	//ŒŸõƒf[ƒ^‚ğƒnƒbƒVƒ…‰»
+	//æ¤œç´¢ãƒ‡ãƒ¼ã‚¿ã‚’ãƒãƒƒã‚·ãƒ¥åŒ–
 	int temp = _serchData % 10;
 	int end = temp;
 	while (1) {
@@ -529,25 +529,25 @@ int hashSearch2(int _hash[], int _pointa[], int _serchData) {
 	return -1;
 }
 
-//‰æ‘œ‚ğo—Í
+//ç”»åƒã‚’å‡ºåŠ›
 void printImage(int _array[][xsize]) {
 	for (int i = 0; i < ysize; i++) {
 		for (int j = 0; j < xsize; j++) {
-			if (_array[i][j] == 1)cout << "¡";
-			else cout << " ";
+			if (_array[i][j] == 1)cout << "â– ";
+			else cout << "â–¡";
 		}
 		cout << endl;
 	}
 }
 
-//Ä‹A“I‚ÉŠKæ‚ğŒvZ
+//å†å¸°çš„ã«éšä¹—ã‚’è¨ˆç®—
 int kaijo(int n) {
 	if (n < 1)return 0;
 	if (n == 1)return 1;
 	else return n * kaijo(n - 1);
 }
 
-//Ä‹A“I“ñ•ª’Tõ
+//å†å¸°çš„äºŒåˆ†æ¢ç´¢
 int binarySearch(int _array[], int _ans, int _low, int _high) {
 	if (_low <= _high) {
 		int mid = (_low + _high) / 2;
@@ -558,15 +558,15 @@ int binarySearch(int _array[], int _ans, int _low, int _high) {
 	else return -1;
 }
 
-//ƒVƒFƒ‹ƒ\[ƒg
+//ã‚·ã‚§ãƒ«ã‚½ãƒ¼ãƒˆ
 void shellSort(int _array[],size_t _size) {
 	int interval = _size/2;
-	//ƒCƒ“ƒ^[ƒoƒ‹‚ğ¬‚³‚­‚µ‚Ä‚¢‚­ƒ‹[ƒv
+	//ã‚¤ãƒ³ã‚¿ãƒ¼ãƒãƒ«ã‚’å°ã•ãã—ã¦ã„ããƒ«ãƒ¼ãƒ—
 	while (interval>0){
-		//ƒCƒ“ƒ^[ƒoƒ‹ŒÂ‚ ‚éV”z—ñ‚Ì”‰ñ‚·ƒ‹[ƒv
+		//ã‚¤ãƒ³ã‚¿ãƒ¼ãƒãƒ«å€‹ã‚ã‚‹æ–°é…åˆ—ã®æ•°å›ã™ãƒ«ãƒ¼ãƒ—
 		for (int i = 0; i < interval; i++)
 		{
-			//ŠÔŠuinterval‚Ì‘}“üƒ\[ƒg
+			//é–“éš”intervalã®æŒ¿å…¥ã‚½ãƒ¼ãƒˆ
 			for (int j = i; j < _size; j+=interval)
 			{
 				for (int k = j + interval; k < _size; k+=interval)
@@ -583,42 +583,42 @@ void shellSort(int _array[],size_t _size) {
 	}
 }
 
-//ƒCƒ“ƒ^[ƒoƒ‹‚ğŒˆ‚ß‚é
-//ƒCƒ“ƒ^[ƒoƒ‹ŒÂ‚ ‚éV”z—ñ‚Ì1‚Â–Ú‚Ì—v‘f‚ğŒˆ‚ß‚é
-//V”z—ñ‚ğ‘}“üƒ\[ƒg‚·‚éB
-//1‚Â–Ú‚Ì—v‘f‚Æ1+n‚Â–Ú‚Ì—v‘f‚ğ”äŠr‚·‚é
-//1‚Â–Ú‚Ì—v‘f‚Æ1+2n‚Â–Ú‚Ì—v‘f‚ğ”äŠr‚·‚é
-//2‚Â–Ú‚Ì—v‘f‚Æ3‚Â–Ú‚Ì—v‘f‚ğ”äŠr‚·‚é
-//1‚Â–Ú‚Ì—v‘f‚Æ4‚Â–Ú‚Ì—v‘f‚ğ”äŠr‚·‚é
-//2‚Â–Ú‚Ì—v‘f‚Æ4‚Â–Ú‚Ì—v‘f‚ğ”äŠr‚·‚é
-//3‚Â–Ú‚Ì—v‘f‚Æ4‚Â–Ú‚Ì—v‘f‚ğ”äŠr‚·‚é
-//‚Š—v‘f‚ªŠî‚ÌƒTƒCƒY‚É‚È‚é‚Ü‚ÅŒJ‚è•Ô‚·
-//ˆê‚Â–Ú‚Ì—v‘f‚ğƒCƒ“ƒNƒŠƒƒ“ƒg‚·‚éBiƒCƒ“ƒ^[ƒoƒ‹‚Ü‚Åj
-//ƒCƒ“ƒ^[ƒoƒ‹‚ğ¬‚³‚­‚·‚éiƒCƒ“ƒ^[ƒoƒ‹‚ª1‚Ü‚Åj
+//ã‚¤ãƒ³ã‚¿ãƒ¼ãƒãƒ«ã‚’æ±ºã‚ã‚‹
+//ã‚¤ãƒ³ã‚¿ãƒ¼ãƒãƒ«å€‹ã‚ã‚‹æ–°é…åˆ—ã®1ã¤ç›®ã®è¦ç´ ã‚’æ±ºã‚ã‚‹
+//æ–°é…åˆ—ã‚’æŒ¿å…¥ã‚½ãƒ¼ãƒˆã™ã‚‹ã€‚
+//1ã¤ç›®ã®è¦ç´ ã¨1+nã¤ç›®ã®è¦ç´ ã‚’æ¯”è¼ƒã™ã‚‹
+//1ã¤ç›®ã®è¦ç´ ã¨1+2nã¤ç›®ã®è¦ç´ ã‚’æ¯”è¼ƒã™ã‚‹
+//2ã¤ç›®ã®è¦ç´ ã¨3ã¤ç›®ã®è¦ç´ ã‚’æ¯”è¼ƒã™ã‚‹
+//1ã¤ç›®ã®è¦ç´ ã¨4ã¤ç›®ã®è¦ç´ ã‚’æ¯”è¼ƒã™ã‚‹
+//2ã¤ç›®ã®è¦ç´ ã¨4ã¤ç›®ã®è¦ç´ ã‚’æ¯”è¼ƒã™ã‚‹
+//3ã¤ç›®ã®è¦ç´ ã¨4ã¤ç›®ã®è¦ç´ ã‚’æ¯”è¼ƒã™ã‚‹
+//ï½Šè¦ç´ ãŒåŸºã®ã‚µã‚¤ã‚ºã«ãªã‚‹ã¾ã§ç¹°ã‚Šè¿”ã™
+//ä¸€ã¤ç›®ã®è¦ç´ ã‚’ã‚¤ãƒ³ã‚¯ãƒªãƒ¡ãƒ³ãƒˆã™ã‚‹ã€‚ï¼ˆã‚¤ãƒ³ã‚¿ãƒ¼ãƒãƒ«ã¾ã§ï¼‰
+//ã‚¤ãƒ³ã‚¿ãƒ¼ãƒãƒ«ã‚’å°ã•ãã™ã‚‹ï¼ˆã‚¤ãƒ³ã‚¿ãƒ¼ãƒãƒ«ãŒ1ã¾ã§ï¼‰
 
 void quickSort(int _array[], int left, int right) {
 	if (left < right) {
 		int i = left;
 		int j = right;
 		int  temp;
-		int pivot = findPivot(_array[i], _array[i + (j - i) / 2], _array[j]); /* (i+j)/2 ‚Å‚ÍƒI[ƒo[ƒtƒ[‚µ‚Ä‚µ‚Ü‚¤ */
-		while (1) { /* a[] ‚ğ pivot ˆÈã‚ÆˆÈ‰º‚ÌW‚Ü‚è‚É•ªŠ„‚·‚é */
-			while (_array[i] < pivot) i++; /* a[i] >= pivot ‚Æ‚È‚éˆÊ’u‚ğŒŸõ */
-			while (pivot < _array[j]) j--; /* a[j] <= pivot ‚Æ‚È‚éˆÊ’u‚ğŒŸõ */
+		int pivot = findPivot(_array[i], _array[i + (j - i) / 2], _array[j]); /* (i+j)/2 ã§ã¯ã‚ªãƒ¼ãƒãƒ¼ãƒ•ãƒ­ãƒ¼ã—ã¦ã—ã¾ã† */
+		while (1) { /* a[] ã‚’ pivot ä»¥ä¸Šã¨ä»¥ä¸‹ã®é›†ã¾ã‚Šã«åˆ†å‰²ã™ã‚‹ */
+			while (_array[i] < pivot) i++; /* a[i] >= pivot ã¨ãªã‚‹ä½ç½®ã‚’æ¤œç´¢ */
+			while (pivot < _array[j]) j--; /* a[j] <= pivot ã¨ãªã‚‹ä½ç½®ã‚’æ¤œç´¢ */
 			if (i >= j) break;
 			temp = _array[i];
 			_array[i] = _array[j];
-			_array[j] = temp; /* a[i], a[j] ‚ğŒğŠ· */
+			_array[j] = temp; /* a[i], a[j] ã‚’äº¤æ› */
 			i++;
 			j--;
 		}
-		quickSort(_array, left, i - 1);  /* •ªŠ„‚µ‚½¶‚ğÄ‹A“I‚Éƒ\[ƒg */
-		quickSort(_array, j + 1, right); /* •ªŠ„‚µ‚½‰E‚ğÄ‹A“I‚Éƒ\[ƒg */
+		quickSort(_array, left, i - 1);  /* åˆ†å‰²ã—ãŸå·¦ã‚’å†å¸°çš„ã«ã‚½ãƒ¼ãƒˆ */
+		quickSort(_array, j + 1, right); /* åˆ†å‰²ã—ãŸå³ã‚’å†å¸°çš„ã«ã‚½ãƒ¼ãƒˆ */
 	}
 }
 
 
-//3‚Â‚Ì’†‰›’l‚ğ•Ô‚·ŠÖ”
+//3ã¤ã®ä¸­å¤®å€¤ã‚’è¿”ã™é–¢æ•°
 int findPivot(int x, int y, int z) {
 	if (x < y) {
 		if (y < z) return y; 
@@ -632,13 +632,13 @@ int findPivot(int x, int y, int z) {
 	}
 }
 
-//ƒsƒ{ƒbƒg‚ğŒˆ‚ß‚é
-//i‚ğ¶‚©‚ç‡‚É’l‚ğ’²‚×ƒsƒ{ƒbƒg‚æ‚è‘å‚«‚¢‚à‚Ì‚ğ’T‚·
-//j‚ğ‰E‚©‚ç‡‚É’l‚ğ’²‚×ƒsƒ{ƒbƒg‚æ‚è¬‚³‚¢‚à‚Ì‚ğ’T‚·
-//“ü‚ê‘Ö‚¦‚é
-//‚»‚ê‚¼‚êƒCƒ“ƒNƒŠƒƒ“ƒgAƒfƒNƒŠƒƒ“ƒg‚·‚éBii‚Ü‚½‚Íj‚ªƒsƒ{ƒbƒg‚Ü‚Åj
-//‚ ‚Ü‚Á‚½‚çƒsƒ{ƒbƒg–{‘Ì‚Æ“ü‚ê‘Ö‚¦‚é
-//i‚Ì¶‘¤‚ğŠî€‚É“ñ‚Â‚É•ªŠ„‚µA‚»‚ê‚¼‚ê‚Åƒsƒ{ƒbƒg‚ğŒˆ‚ß‚éBi—v‘f”‚ª1ˆÈ‰º‚Ü‚Åj
+//ãƒ”ãƒœãƒƒãƒˆã‚’æ±ºã‚ã‚‹
+//iã‚’å·¦ã‹ã‚‰é †ã«å€¤ã‚’èª¿ã¹ãƒ”ãƒœãƒƒãƒˆã‚ˆã‚Šå¤§ãã„ã‚‚ã®ã‚’æ¢ã™
+//jã‚’å³ã‹ã‚‰é †ã«å€¤ã‚’èª¿ã¹ãƒ”ãƒœãƒƒãƒˆã‚ˆã‚Šå°ã•ã„ã‚‚ã®ã‚’æ¢ã™
+//å…¥ã‚Œæ›¿ãˆã‚‹
+//ãã‚Œãã‚Œã‚¤ãƒ³ã‚¯ãƒªãƒ¡ãƒ³ãƒˆã€ãƒ‡ã‚¯ãƒªãƒ¡ãƒ³ãƒˆã™ã‚‹ã€‚ï¼ˆiã¾ãŸã¯jãŒãƒ”ãƒœãƒƒãƒˆã¾ã§ï¼‰
+//ã‚ã¾ã£ãŸã‚‰ãƒ”ãƒœãƒƒãƒˆæœ¬ä½“ã¨å…¥ã‚Œæ›¿ãˆã‚‹
+//iã®å·¦å´ã‚’åŸºæº–ã«äºŒã¤ã«åˆ†å‰²ã—ã€ãã‚Œãã‚Œã§ãƒ”ãƒœãƒƒãƒˆã‚’æ±ºã‚ã‚‹ã€‚ï¼ˆè¦ç´ æ•°ãŒ1ä»¥ä¸‹ã¾ã§ï¼‰
 
 
 
@@ -649,11 +649,11 @@ void heapSort(int _array[], int _arraySize) {
 		heapSort(_array, _arraySize - 1);
 	}
 }
-//“®ì
-//ƒ‹[ƒg‚ğæ‚èo‚µ‚Ä––”ö‚Æ“ü‚ê‘Ö‚¦‚éB
-//ƒq[ƒv–ØÄ\’z
-//n-1ŒÂ‚Ì—v‘f‚Åƒq[ƒvƒ\[ƒg‚·‚éB
-//n=1‚È‚çI‚í‚é‚Æ‚¢‚¤“®ì‚ğ’Ç‰Á‚·‚éB
+//å‹•ä½œ
+//ãƒ«ãƒ¼ãƒˆã‚’å–ã‚Šå‡ºã—ã¦æœ«å°¾ã¨å…¥ã‚Œæ›¿ãˆã‚‹ã€‚
+//ãƒ’ãƒ¼ãƒ—æœ¨å†æ§‹ç¯‰
+//n-1å€‹ã®è¦ç´ ã§ãƒ’ãƒ¼ãƒ—ã‚½ãƒ¼ãƒˆã™ã‚‹ã€‚
+//n=1ãªã‚‰çµ‚ã‚ã‚‹ã¨ã„ã†å‹•ä½œã‚’è¿½åŠ ã™ã‚‹ã€‚
 
 void makeHeap(int _array[], int _arraySize) {
 	
@@ -684,14 +684,14 @@ void makeHeap(int _array[], int _arraySize) {
 		if (heapRoot < 0)break;
 	}
 }
-//“®ì
-//ˆê”Ô‰º‚Ì}‚É’–Ú
-//Šï”‚È‚ç2‹ô”‚È‚ç3‚Ì—v‘f‚ğ”äŠr‚µˆê”Ô‘å‚«‚¢‚à‚Ì‚ğª‚É’u‚­
-//‘O‚Ì}‚É’–Ú
-//3‚Ì—v‘f‚ğ”äŠr‚µˆê”Ô‘å‚«‚¢‚à‚Ì‚ğª‚É’u‚­
-//‘O‚Ì}‚É’–Ú
-//3‚Ì—v‘f‚ğ”äŠr‚µˆê”Ô‘å‚«‚¢‚à‚Ì‚ğª‚É’u‚­
-//—v‘f‚ª0”Ô–Ú‚É‚È‚Á‚½‚çI—¹
+//å‹•ä½œ
+//ä¸€ç•ªä¸‹ã®æã«æ³¨ç›®
+//å¥‡æ•°ãªã‚‰2å¶æ•°ãªã‚‰3ã®è¦ç´ ã‚’æ¯”è¼ƒã—ä¸€ç•ªå¤§ãã„ã‚‚ã®ã‚’æ ¹ã«ç½®ã
+//å‰ã®æã«æ³¨ç›®
+//3ã®è¦ç´ ã‚’æ¯”è¼ƒã—ä¸€ç•ªå¤§ãã„ã‚‚ã®ã‚’æ ¹ã«ç½®ã
+//å‰ã®æã«æ³¨ç›®
+//3ã®è¦ç´ ã‚’æ¯”è¼ƒã—ä¸€ç•ªå¤§ãã„ã‚‚ã®ã‚’æ ¹ã«ç½®ã
+//è¦ç´ ãŒ0ç•ªç›®ã«ãªã£ãŸã‚‰çµ‚äº†
 
 void heapSwap(int _array[], int _a, int _b) {
 	int temp = _array[_a];
@@ -701,7 +701,7 @@ void heapSwap(int _array[], int _a, int _b) {
 
 
 
-//_array‚Í”z—ñA_temp[]‚ÍƒRƒs[—ÌˆæA_left‚ÍŠJnƒCƒ“ƒfƒbƒNƒXA_right‚ÍI—¹ƒCƒ“ƒfƒbƒNƒX
+//_arrayã¯é…åˆ—ã€_temp[]ã¯ã‚³ãƒ”ãƒ¼é ˜åŸŸã€_leftã¯é–‹å§‹ã‚¤ãƒ³ãƒ‡ãƒƒã‚¯ã‚¹ã€_rightã¯çµ‚äº†ã‚¤ãƒ³ãƒ‡ãƒƒã‚¯ã‚¹
 void mergeSort(int _array[],int _temp[], int _left, int _right) {
 	if (_left >= _right) return;
 	int mid = (_left + _right) / 2;
@@ -709,12 +709,12 @@ void mergeSort(int _array[],int _temp[], int _left, int _right) {
 	mergeSort(_array, _temp, mid+1,_right);
 	merge(_array, _temp, _left, _right);
 }
-//“®ì
-//—v‘f‚ª1‚Â‚É‚È‚é‚Ü‚Å”z—ñ‚ğ2‚Â‚É•ªŠ„‚·‚é
-//Še”z—ñ‚ğ’á‚¢‡‚Éƒ\[ƒg‚·‚é
-//2‚Â‚Ì”z—ñ‚ğƒ}[ƒW‚·‚éB‚Ğ‚Æ‚Â‚È‚ç‚»‚ê©g‚ğƒ}[ƒW‚·‚éBi”z—ñ‚ªˆê‚Â‚É‚È‚é‚Ü‚Åj
+//å‹•ä½œ
+//è¦ç´ ãŒ1ã¤ã«ãªã‚‹ã¾ã§é…åˆ—ã‚’2ã¤ã«åˆ†å‰²ã™ã‚‹
+//å„é…åˆ—ã‚’ä½ã„é †ã«ã‚½ãƒ¼ãƒˆã™ã‚‹
+//2ã¤ã®é…åˆ—ã‚’ãƒãƒ¼ã‚¸ã™ã‚‹ã€‚ã²ã¨ã¤ãªã‚‰ãã‚Œè‡ªèº«ã‚’ãƒãƒ¼ã‚¸ã™ã‚‹ã€‚ï¼ˆé…åˆ—ãŒä¸€ã¤ã«ãªã‚‹ã¾ã§ï¼‰
 
-//i‚Ítemp‚ÌŒ»İ‚ÌƒCƒ“ƒfƒbƒNƒXBj‚Í¶‚ÌŒ»İ‚ÌƒCƒ“ƒfƒbƒNƒXBk‚Í‰E‚ÌŒ»İ‚ÌƒCƒ“ƒfƒbƒNƒXBmid‚Í¶‚ÌI—¹’n“_B
+//iã¯tempã®ç¾åœ¨ã®ã‚¤ãƒ³ãƒ‡ãƒƒã‚¯ã‚¹ã€‚jã¯å·¦ã®ç¾åœ¨ã®ã‚¤ãƒ³ãƒ‡ãƒƒã‚¯ã‚¹ã€‚kã¯å³ã®ç¾åœ¨ã®ã‚¤ãƒ³ãƒ‡ãƒƒã‚¯ã‚¹ã€‚midã¯å·¦ã®çµ‚äº†åœ°ç‚¹ã€‚
 void merge(int _array[], int _temp[], int _left, int _right) {
 	int i = 0;
 	int j = _left;
@@ -747,8 +747,8 @@ void merge(int _array[], int _temp[], int _left, int _right) {
 	}
 	for (int m = 0; m < i; m++) _array[_left + m] = _temp[m];
 }
-//“®ì
-//ƒRƒs[—Ìˆæ‚ğ—pˆÓ‚·‚éB
-//2‚Â‚Ì”z—ñ‚Ìn‚ß‚Ì—v‘f‚©‚ç”äŠr‚µ‚Ä‚¢‚«A¬‚³‚¢•û‚ğƒRƒs[—Ìˆæ‚ÖƒRƒs[‚·‚é
-//•Ğ•û‚ª––’[‚Ö’B‚µ‚½‚çA‚à‚¤•Ğ•û‚Ìc‚è‚ğ‘S‚ÄƒRƒs[—Ìˆæ‚ÖƒRƒs[‚·‚éB
-//Šî‚Ì”z—ñ‚ÉƒRƒs[‚·‚é
+//å‹•ä½œ
+//ã‚³ãƒ”ãƒ¼é ˜åŸŸã‚’ç”¨æ„ã™ã‚‹ã€‚
+//2ã¤ã®é…åˆ—ã®å§‹ã‚ã®è¦ç´ ã‹ã‚‰æ¯”è¼ƒã—ã¦ã„ãã€å°ã•ã„æ–¹ã‚’ã‚³ãƒ”ãƒ¼é ˜åŸŸã¸ã‚³ãƒ”ãƒ¼ã™ã‚‹
+//ç‰‡æ–¹ãŒæœ«ç«¯ã¸é”ã—ãŸã‚‰ã€ã‚‚ã†ç‰‡æ–¹ã®æ®‹ã‚Šã‚’å…¨ã¦ã‚³ãƒ”ãƒ¼é ˜åŸŸã¸ã‚³ãƒ”ãƒ¼ã™ã‚‹ã€‚
+//åŸºã®é…åˆ—ã«ã‚³ãƒ”ãƒ¼ã™ã‚‹
